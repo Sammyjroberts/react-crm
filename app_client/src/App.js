@@ -19,11 +19,13 @@ class App extends Component {
         <Router>
           <div>
             <Navbar />
-            <Route exact path ="/" component={Home}/>
-            <Route exact path ="/employees" component={EmployeeHome}/>
-            <Route exact path ="/employees/add" component={EmployeeAdd}/>
-            <Route exact path ="/employees/edit/:id" component={EmployeeEdit}/>
-            <Route exact path ="/employees/view/:id" component={EmployeeView}/>
+            <div className = "container">
+              <Route exact path ="/" component={Home}/>
+              <Route exact path ="/employees" component={EmployeeHome}/>
+              <Route exact path ="/employees/add" component={EmployeeAdd}/>
+              <Route exact path ="/employees/edit/:id" component={EmployeeEdit}/>
+              <Route exact path ="/employees/view/:id" component={EmployeeView}/>
+            </div>
             {/* footer go here yo */}
           </div>
         </Router>
