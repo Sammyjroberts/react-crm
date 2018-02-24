@@ -20,8 +20,10 @@ class EmployeeHome extends Component {
         })
     }
     render() {
+        console.log(this.props.match)
         return(
         <div>
+            home > employees
             <h1>Employee Home <Link className = "btn btn-primary" to="/employees/add">Add Employee</Link></h1>
             {this.state.employees.length > 0 ? <EmployeeTable employees = {this.state.employees}/> : "No Employees to show"}
         </div>

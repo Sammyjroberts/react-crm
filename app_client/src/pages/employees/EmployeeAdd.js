@@ -42,6 +42,7 @@ class EmployeeAdd extends Component {
     render() {
         return(
         <div>
+            home > employees > add
             <h1 className= "text-center">Employee Add</h1>
             <div className = "col-md-8 col-md-offset-2" style={formContainerStyle}>
                 <Form formState={FormStates.add}
