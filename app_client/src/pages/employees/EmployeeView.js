@@ -14,25 +14,37 @@ class EmployeeView extends Component {
         this.state =  {
             employee: {}
         }
+        this.handleDelete = this.handleDelete.bind(this);
+        this.gotoEdit = this.gotoEdit.bind(this);
     }
     componentDidMount() {
         EmployeeModel.getOne(this.props.match.params.id)
         .then(resp => {
             this.setState({employee: resp.data});
         })
+        .catch(err => console.error(err));
     }
     gotoEdit(e) {
         e.preventDefault();
         this.props.history.push(`/employees/edit/${this.props.match.params.id}`);
+    }
+    handleDelete(e) {
+        e.preventDefault();
+        EmployeeModel.delete(this.props.match.params.id)
+        .then(resp => {
+            console.log(resp);
+            this.props.history.push("/employees");
+        }).catch(err => console.error(err));
     }
     render() {
         return (
             <div>
                 <h1 className="text-center">Employee View</h1>
                 <div className="col-md-8 col-md-offset-2" style={formContainerStyle}>
-                    <Form handleEdit={this.gotoEdit.bind(this)}formState={FormStates.view}
-                        employee={this.state.employee}
-                         />
+                    <Form handleEdit={this.gotoEdit} 
+                    formState={FormStates.view}
+                    employee={this.state.employee}
+                    handleDelete={this.handleDelete} />
                 </div>
             </div>
         )

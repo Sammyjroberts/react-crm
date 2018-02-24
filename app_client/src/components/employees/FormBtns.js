@@ -19,7 +19,7 @@ class FormBtns extends Component {
         return(
         <div>
             {renderSubmit ?
-            <button onClick={this.props.handleSubmit} 
+            <button onClick={this.props.handleSubmit } 
             className = "btn btn-primary pull-right" 
             type = "submit">Submit</button> : ""}
             {renderEdit ?

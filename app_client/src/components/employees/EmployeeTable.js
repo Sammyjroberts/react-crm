@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import EmployeeRow from "./EmployeeRow";
-class EmployeeHome extends Component {
+class EmployeeTable extends Component {
     render() {
         return(
         <table className = "table table-striped table-bordered table-hover">
@@ -15,10 +15,9 @@ class EmployeeHome extends Component {
             </tr>
         </thead>
         <tbody>
-{this.props.employees.map(employee => <EmployeeRow key={employee.id} employee={employee}/>)}
+            {this.props.employees.map(employee => <EmployeeRow key={employee.id} employee={employee}/>  )}
         </tbody>
         </table>
-        )
-    }
+        )}
 }
-export default EmployeeHome;
+export default EmployeeTable;

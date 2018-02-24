@@ -23,9 +23,10 @@ class EmployeeHome extends Component {
         return(
         <div>
             <h1>Employee Home <Link className = "btn btn-primary" to="/employees/add">Add Employee</Link></h1>
-            {this.state.employees.length > 0 ?<EmployeeTable employees = {this.state.employees}/> : ""}
+            {this.state.employees.length > 0 ? <EmployeeTable employees = {this.state.employees}/> : "No Employees to show"}
         </div>
         )
     }
 }
+
 export default EmployeeHome;
