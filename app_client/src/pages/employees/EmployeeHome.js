@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
-import EmployeeTable from "./EmployeeTable";
+import EmployeeTable from "../../components/employees/EmployeeTable";
 import EmployeeModel from "../../helpers/models/EmployeeModel";
 class EmployeeHome extends Component {
     constructor(props) {

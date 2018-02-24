@@ -3,10 +3,10 @@ import {BrowserRouter as Router, Route} from "react-router-dom";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 // employee components
-import EmployeeHome from "./components/employees/EmployeeHome";
-import EmployeeAdd from "./components/employees/EmployeeAdd";
-import EmployeeEdit from "./components/employees/EmployeeEdit";
-import EmployeeView from "./components/employees/EmployeeView";
+import EmployeeHome from "./pages/employees/EmployeeHome";
+import EmployeeAdd from "./pages/employees/EmployeeAdd";
+import EmployeeEdit from "./pages/employees/EmployeeEdit";
+import EmployeeView from "./pages/employees/EmployeeView";
 
 
 import logo from './logo.svg';

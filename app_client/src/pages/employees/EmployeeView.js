@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import FormStates from "../../helpers/FormStates";
-import Form from "./EmployeeForm";
+import Form from "../../components/employees/EmployeeForm";
 import EmployeeModel from "../../helpers/models/EmployeeModel";
 const formContainerStyle = {
     boxShadow: "0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12), 0 3px 5px -1px rgba(0,0,0,0.3)",
@@ -21,12 +21,16 @@ class EmployeeView extends Component {
             this.setState({employee: resp.data});
         })
     }
+    gotoEdit(e) {
+        e.preventDefault();
+        this.props.history.push(`/employees/edit/${this.props.match.params.id}`);
+    }
     render() {
         return (
             <div>
                 <h1 className="text-center">Employee View</h1>
                 <div className="col-md-8 col-md-offset-2" style={formContainerStyle}>
-                    <Form state={FormStates.view}
+                    <Form handleEdit={this.gotoEdit.bind(this)}formState={FormStates.view}
                         employee={this.state.employee}
                          />
                 </div>

@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import FormStates from "../../helpers/FormStates";
+import FormBtns from "./FormBtns";
 class EmployeeForm extends Component {
     render() {
         let readOnly = false;
-        if(this.props.state === FormStates.view) {
+        if(this.props.formState === FormStates.view) {
             readOnly = true;
         }
         return (
@@ -26,9 +27,11 @@ class EmployeeForm extends Component {
                         <input readOnly={readOnly} value={this.props.employee.jobTitle} type="text" className="form-control" name="jobTitle" placeholder="Job Title..." onChange={this.props.handleChange}/>
                     </div>
                     <div className="clearfix">
-                        <button onClick={this.props.handleSubmit} className = "btn btn-primary pull-right" type = "submit">Submit</button>
+                        <FormBtns handleDelete = {this.props.handleDelete} 
+                        handleEdit={this.props.handleEdit} 
+                        formState = {this.props.formState} 
+                        handleSubmit={this.props.handleSubmit}/>
                     </div>
-
                 </form>
             </div>
         )

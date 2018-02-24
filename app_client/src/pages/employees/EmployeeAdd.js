@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import Form from "./EmployeeForm"
+import Form from "../../components/employees/EmployeeForm";
 import EmployeeModel from "../../helpers/models/EmployeeModel";
 import FormStates from "../../helpers/FormStates";
 
@@ -44,7 +44,7 @@ class EmployeeAdd extends Component {
         <div>
             <h1 className= "text-center">Employee Add</h1>
             <div className = "col-md-8 col-md-offset-2" style={formContainerStyle}>
-                <Form state={FormStates.add}
+                <Form formState={FormStates.add}
                 employee={this.state} 
                 handleChange={this.handleChange.bind(this)} 
                 handleSubmit={this.handleSubmit.bind(this)}/>
